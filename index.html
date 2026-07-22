@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iframe em Tela Cheia</title>
+    <title>HelloBehavior</title>
+    
+    <!-- Link para o Manifesto do PWA -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Ícone personalizável (Favicon) -->
+    <link rel="icon" href="URL_DO_SEU_ICONE.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://github.com/BossBones/Hellos__HelloBehavior/blob/main/icons/icon-192.png?raw=true">
+
     <style>
-        /* Remove as margens e barras de rolagem da página principal */
-        body {
+        body, html {
             margin: 0;
             padding: 0;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
+            background-color: #ffffff; /* Cor de fundo enquanto carrega */
         }
-
-        /* Faz o iframe ocupar toda a tela */
         iframe {
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             border: none;
             display: block;
         }
@@ -23,8 +31,18 @@
 </head>
 <body>
 
-    <!-- Insira o link do seu site aqui -->
-    <iframe src="https://bossbones.github.io/Hellos__HelloBehavior/"></iframe>
+    <!-- Substitua a URL abaixo pelo site que deseja exibir -->
+    <iframe src="https://bossbones.github.io/Hellos__HelloBehavior/" allow="fullscreen"></iframe>
 
+    <script>
+        // Registra o Service Worker para habilitar a instalação do PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('Service Worker registrado!', reg))
+                    .catch(err => console.error('Erro ao registrar Service Worker:', err));
+            });
+        }
+    </script>
 </body>
 </html>
