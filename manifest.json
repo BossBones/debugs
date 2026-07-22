@@ -1,0 +1,20 @@
+{
+    "name": "HelloBehavior",
+    "short_name": "HelloBehavior",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "icons": [
+        {
+            "src": "https://github.com/BossBones/Hellos__HelloBehavior/blob/main/icons/icon-192.png?raw=true",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://github.com/BossBones/Hellos__HelloBehavior/blob/main/icons/icon-192.png?raw=true",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
